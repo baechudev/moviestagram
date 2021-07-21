@@ -28,18 +28,18 @@ function Header() {
     <div className="navbar">
       <div className="navbar-logo">
         <i class="fas fa-photo-video"></i>
-        <a href="#">Moviestagram</a>
+        <a href="/">Moviestagram</a>
       </div>
 
       <ul className={toggleMenuClass}>
         <li>
-          <a href="#">News</a>
+          <a href="/news">News</a>
         </li>
         <li>
-          <a href="#">Hots</a>
+          <a href="/hots">Hots</a>
         </li>
         <li>
-          <a href="#">Recommendations</a>
+          <a href="/recs">Recommendations</a>
         </li>
       </ul>
 
