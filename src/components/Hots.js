@@ -1,3 +1,5 @@
+import "./Hots.css";
+
 const Hots = () => {
   return (
     <div>

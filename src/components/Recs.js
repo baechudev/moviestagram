@@ -1,3 +1,5 @@
+import "./Recs.css";
+
 const Rect = () => {
   return (
     <div>

@@ -1,0 +1,60 @@
+:root {
+  --text-color: #ffffff;
+  --text-color-hover: #ff6f61;
+  --mainlogo-color: #ff6f61;
+  --background-color: #34568b;
+}
+
+.footBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-color);
+  padding: 20px;
+  margin: 0px;
+}
+
+.footBar-logo {
+  font-size: 20px;
+  color: var(--text-color);
+
+  display: flex;
+}
+
+.footBar-logo * {
+  padding: 0 5px;
+}
+
+.footBar-logo i {
+  color: var(--mainlogo-color);
+}
+
+.footBar ul {
+  margin: 0;
+}
+
+.footBar a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.footBar a:hover {
+  color: var(--text-color-hover);
+}
+
+.footBar-info {
+  margin-left: 0;
+  font-size: 20px;
+  display: flex;
+  list-style: none;
+}
+
+.footBar-info li {
+  padding: 0 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .footBar-info {
+    display: none;
+  }
+}

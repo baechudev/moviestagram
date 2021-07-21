@@ -18,12 +18,12 @@
   margin: 0;
 }
 
-a {
+.navbar a {
   text-decoration: none;
   color: var(--text-color);
 }
 
-a:hover {
+.navbar a:hover {
   color: var(--text-color-hover);
 }
 

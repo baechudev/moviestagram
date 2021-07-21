@@ -27,7 +27,7 @@ function Header() {
   return (
     <div className="navbar">
       <div className="navbar-logo">
-        <i class="fas fa-photo-video"></i>
+        <i className="fas fa-photo-video"></i>
         <a href="/">Moviestagram</a>
       </div>
 
@@ -45,19 +45,19 @@ function Header() {
 
       <ul className={toggleiconClass}>
         <li>
-          <a href="#">
-            <i class="fab fa-instagram"></i>
+          <a href="https://www.instagram.com/">
+            <i className="fab fa-instagram"></i>
           </a>
         </li>
         <li>
-          <a href="#">
-            <i class="fab fa-twitter"></i>
+          <a href="https://twitter.com/">
+            <i className="fab fa-twitter"></i>
           </a>
         </li>
       </ul>
 
       <a href="#" className="navbar-toggle" onClick={menuToggleFunction}>
-        <i class="fas fa-bars"></i>
+        <i className="fas fa-bars"></i>
       </a>
     </div>
   );

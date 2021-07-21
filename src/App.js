@@ -1,11 +1,11 @@
 import "./App.css";
 
 import Header from "./components/Header";
-
 import Home from "./components/Home";
 import Hots from "./components/Hots";
 import News from "./components/News";
 import Recs from "./components/Recs";
+import Footer from "./components/Footer";
 import { Route, Switch } from "react-router-dom";
 
 function App() {
@@ -30,7 +30,9 @@ function App() {
           </Route>
         </Switch>
       </div>
-      <footer className="App-footer"></footer>
+      <footer className="App-footer">
+        <Footer />
+      </footer>
     </div>
   );
 }
