@@ -1,22 +1,22 @@
 :root {
-  --text-color: #ffffff;
-  --text-color-hover: #ff6f61;
-  --mainlogo-color: #ff6f61;
-  --background-color: #34568b;
+  --footer-text-color: #ffffff;
+  --footer-text-color-hover: #ff6f61;
+  --footer-mainlogo-color: #ff6f61;
+  --footer-background-color: #34568b;
 }
 
 .footBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--background-color);
+  background-color: var(--footer-background-color);
   padding: 20px;
   margin: 0px;
 }
 
 .footBar-logo {
   font-size: 20px;
-  color: var(--text-color);
+  color: var(--footer-text-color);
 
   display: flex;
 }
@@ -26,7 +26,7 @@
 }
 
 .footBar-logo i {
-  color: var(--mainlogo-color);
+  color: var(--footer-mainlogo-color);
 }
 
 .footBar ul {
@@ -35,11 +35,11 @@
 
 .footBar a {
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--footer-text-color);
 }
 
 .footBar a:hover {
-  color: var(--text-color-hover);
+  color: var(--footer-text-color-hover);
 }
 
 .footBar-info {

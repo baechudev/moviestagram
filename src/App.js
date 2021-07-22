@@ -1,12 +1,12 @@
-import "./App.css";
+import { Route, Switch } from 'react-router-dom';
+import './App.css';
 
-import Header from "./components/Header";
-import Home from "./components/Home";
-import Hots from "./components/Hots";
-import News from "./components/News";
-import Recs from "./components/Recs";
-import Footer from "./components/Footer";
-import { Route, Switch } from "react-router-dom";
+import Header from './components/Header';
+import Home from './components/Home';
+import Hots from './components/Hots';
+import News from './components/News';
+import Recs from './components/Recs';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -30,9 +30,9 @@ function App() {
           </Route>
         </Switch>
       </div>
-      <footer className="App-footer">
+      {/* <footer className="App-footer">
         <Footer />
-      </footer>
+      </footer> */}
     </div>
   );
 }

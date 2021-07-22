@@ -1,15 +1,15 @@
 :root {
-  --text-color: #ffffff;
-  --text-color-hover: #ff6f61;
-  --mainlogo-color: #ff6f61;
-  --background-color: #34568b;
+  --header-text-color: #f7f9fb;
+  --header-text-color-hover: #8fc1e3;
+  --header-main-logo-color: #8fc1e3;
+  --header-background-color: #5085a5;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--background-color);
+  background-color: var(--header-background-color);
   padding: 20px;
   margin: 0px;
 }
@@ -20,11 +20,11 @@
 
 .navbar a {
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--header-text-color);
 }
 
 .navbar a:hover {
-  color: var(--text-color-hover);
+  color: var(--header-text-color-hover);
 }
 
 .navbar-logo {
@@ -36,7 +36,7 @@
 }
 
 .navbar-logo i {
-  color: var(--mainlogo-color);
+  color: var(--header-main-logo-color);
 }
 
 .navbar-menu {

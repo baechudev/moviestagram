@@ -1,0 +1,52 @@
+:root {
+  --card-border-color: #5085a5;
+  --card-background-color: #f7f9fb;
+  --card-title-text-color: #5085a5;
+  --card-info-text-color: #5085a5;
+}
+
+.card {
+  max-width: 650px;
+  margin: 30px auto;
+  padding: 20px;
+
+  background-color: var(--card-background-color);
+
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 15px;
+  border-color: var(--card-border-color);
+}
+
+.card-head {
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--card-title-text-color);
+}
+
+.card-head span {
+  margin: 10px;
+}
+
+.card-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-body-pic {
+  width: 50%;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.card-body-info {
+  width: 50%;
+
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 0;
+
+  color: var(--card-info-text-color);
+}

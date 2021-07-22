@@ -1,9 +1,50 @@
-import "./Hots.css";
+import { useState, useEffect } from 'react';
+import React from 'react';
+import axios from 'axios';
+
+import Datacard from './Datacard';
+
+import './Hots.css';
 
 const Hots = () => {
+  const [page, setPage] = useState(1);
+  const [movies, setMovies] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const res = await axios.get(
+          `https://api.themoviedb.org/3/movie/popular?api_key=1806da7101aaea34974ccb44f321e4bf&language=en-US&page=${page}`
+        );
+        setMovies(res.data.results);
+      } catch (e) {
+        console.log(e);
+      }
+      setLoading(false);
+    };
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <p>Loading</p>;
+  }
+
+  if (!movies) {
+    return null;
+  }
+
   return (
     <div>
-      <h1>Hots!</h1>
+      {movies.map((movie) => (
+        <Datacard
+          title={movie.title}
+          poster={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+          date={movie.release_date}
+          overview={movie.overview}
+        />
+      ))}
     </div>
   );
 };
