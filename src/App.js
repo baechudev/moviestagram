@@ -2,10 +2,9 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 
 import Header from './components/Header';
-import Home from './components/Home';
-import Hots from './components/Hots';
-import News from './components/News';
-import Recs from './components/Recs';
+import PolularMovie from './components/PolularMovie';
+import TopRatedMovie from './components/TopRatedMovie';
+import UpcomingMovie from './components/UpcomingMovie';
 import Footer from './components/Footer';
 
 function App() {
@@ -17,16 +16,16 @@ function App() {
       <div className="App-main">
         <Switch>
           <Route exact path="/">
-            <Home />
+            <PolularMovie />
           </Route>
-          <Route exact path="/hots">
-            <Hots />
+          <Route exact path="/popular">
+            <PolularMovie />
           </Route>
-          <Route exact path="/news">
-            <News />
+          <Route exact path="/top-rated">
+            <TopRatedMovie />
           </Route>
-          <Route exact path="/recs">
-            <Recs />
+          <Route exact path="/upcoming">
+            <UpcomingMovie />
           </Route>
         </Switch>
       </div>

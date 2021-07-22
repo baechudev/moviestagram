@@ -10,7 +10,7 @@ const Datacard = (props) => {
         <img className="card-body-pic" src={props.poster} alt="img"></img>
         <ul className="card-body-info">
           <li>Release Date: {props.date}</li>
-          <li>Overview {props.overview}</li>
+          <li>Overview: {props.overview}</li>
         </ul>
       </div>
     </div>

@@ -1,10 +1,10 @@
-import "./Header.css";
-import { useState, useEffect } from "react";
+import './Header.css';
+import { useState, useEffect } from 'react';
 
 function Header() {
   const [classActive, setClassActive] = useState(false);
-  const [toggleMenuClass, setToggleMenuClass] = useState("navbar-menu");
-  const [toggleiconClass, setToggleiconClass] = useState("navbar-icon");
+  const [toggleMenuClass, setToggleMenuClass] = useState('navbar-menu');
+  const [toggleiconClass, setToggleiconClass] = useState('navbar-icon');
 
   const menuToggleFunction = () => {
     classActive ? setClassActive(false) : setClassActive(true);
@@ -12,12 +12,12 @@ function Header() {
 
   const ToggleButton = () => {
     classActive
-      ? setToggleMenuClass("navbar-menu unfolded")
-      : setToggleMenuClass("navbar-menu");
+      ? setToggleMenuClass('navbar-menu unfolded')
+      : setToggleMenuClass('navbar-menu');
 
     classActive
-      ? setToggleiconClass("navbar-icon unfolded")
-      : setToggleiconClass("navbar-icon");
+      ? setToggleiconClass('navbar-icon unfolded')
+      : setToggleiconClass('navbar-icon');
   };
 
   useEffect(() => {
@@ -33,13 +33,13 @@ function Header() {
 
       <ul className={toggleMenuClass}>
         <li>
-          <a href="/news">News</a>
+          <a href="/popular">Popular</a>
         </li>
         <li>
-          <a href="/hots">Hots</a>
+          <a href="/top-rated">Top Rated</a>
         </li>
         <li>
-          <a href="/recs">Recommendations</a>
+          <a href="/upcoming">Upcoming</a>
         </li>
       </ul>
 

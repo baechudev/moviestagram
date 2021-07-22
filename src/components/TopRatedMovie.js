@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
-import React from 'react';
 import axios from 'axios';
 
 import Datacard from './Datacard';
 
-import './Hots.css';
+import './TopRatedMovie.css';
 
-const Hots = () => {
+const TopRatedMovie = () => {
   const [page, setPage] = useState(1);
   const [movies, setMovies] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -16,7 +15,7 @@ const Hots = () => {
       setLoading(true);
       try {
         const res = await axios.get(
-          `https://api.themoviedb.org/3/movie/popular?api_key=1806da7101aaea34974ccb44f321e4bf&language=en-US&page=${page}`
+          `https://api.themoviedb.org/3/movie/top_rated?api_key=1806da7101aaea34974ccb44f321e4bf&language=en-US&page=${page}`
         );
         setMovies(res.data.results);
       } catch (e) {
@@ -28,7 +27,7 @@ const Hots = () => {
   }, []);
 
   if (loading) {
-    return <p>Loading</p>;
+    return null;
   }
 
   if (!movies) {
@@ -49,4 +48,4 @@ const Hots = () => {
   );
 };
 
-export default Hots;
+export default TopRatedMovie;

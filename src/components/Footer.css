@@ -1,8 +1,8 @@
 :root {
-  --footer-text-color: #ffffff;
-  --footer-text-color-hover: #ff6f61;
-  --footer-mainlogo-color: #ff6f61;
-  --footer-background-color: #34568b;
+  --footer-text-color: #f7f9fb;
+  --footer-text-color-hover: #8fc1e3;
+  --footer-mainlogo-color: #8fc1e3;
+  --footer-background-color: #5085a5;
 }
 
 .footBar {
