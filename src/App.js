@@ -1,11 +1,14 @@
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 
-import Header from './components/Header';
-import PolularMovie from './components/PolularMovie';
-import TopRatedMovie from './components/TopRatedMovie';
-import UpcomingMovie from './components/UpcomingMovie';
-import Footer from './components/Footer';
+import Header from './components/Header/Header';
+import PolularMovie from './components/PopularMovie/PolularMovie';
+import TopRatedMovie from './components/TopRatedMovie/TopRatedMovie';
+import UpcomingMovie from './components/UpcomingMovie/UpcomingMovie';
+import Footer from './components/Footer/Footer';
+
+import './components/PopularMovie/PolularMovie.css';
+import './components/DataCard/DataCard.css';
 
 function App() {
   return (

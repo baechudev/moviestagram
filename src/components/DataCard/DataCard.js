@@ -1,8 +1,6 @@
-import './Datacard.css';
-
-const Datacard = (props) => {
+const DataCard = (props) => {
   return (
-    <div className="card">
+    <>
       <div className="card-head">
         <span>{props.title}</span>
       </div>
@@ -13,8 +11,8 @@ const Datacard = (props) => {
           <li>Overview: {props.overview}</li>
         </ul>
       </div>
-    </div>
+    </>
   );
 };
 
-export default Datacard;
+export default DataCard;
