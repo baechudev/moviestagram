@@ -1,7 +1,7 @@
 import './Header.css';
 import { useState, useEffect } from 'react';
 
-function Header() {
+const Header = () => {
   const [classActive, setClassActive] = useState(false);
   const [toggleMenuClass, setToggleMenuClass] = useState('navbar-menu');
   const [toggleiconClass, setToggleiconClass] = useState('navbar-icon');
@@ -64,6 +64,6 @@ function Header() {
       </div>
     </div>
   );
-}
+};
 
 export default Header;

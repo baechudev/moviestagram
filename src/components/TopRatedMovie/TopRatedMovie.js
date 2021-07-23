@@ -24,7 +24,7 @@ const TopRatedMovie = () => {
       setLoading(false);
     };
     fetchData();
-  }, []);
+  }, [page]);
 
   if (loading) {
     return null;

@@ -1,18 +1,35 @@
-const DataCard = (props) => {
+import React from 'react';
+import Proptypes from 'prop-types';
+
+const DataCard = ({ title, poster, date, overview }) => {
   return (
-    <>
+    <div className="card">
       <div className="card-head">
-        <span>{props.title}</span>
+        <span>{title}</span>
       </div>
       <div className="card-body">
-        <img className="card-body-pic" src={props.poster} alt="img"></img>
+        <img className="card-body-pic" src={poster} alt="img"></img>
         <ul className="card-body-info">
-          <li>Release Date: {props.date}</li>
-          <li>Overview: {props.overview}</li>
+          <li>Release Date: {date}</li>
+          <li>Overview: {overview}</li>
         </ul>
       </div>
-    </>
+    </div>
   );
+};
+
+DataCard.defaultProps = {
+  title: '',
+  poster: '',
+  date: '',
+  overview: '',
+};
+
+DataCard.propTypes = {
+  title: Proptypes.string,
+  poster: Proptypes.string,
+  date: Proptypes.string,
+  overview: Proptypes.string,
 };
 
 export default DataCard;

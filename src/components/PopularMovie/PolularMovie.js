@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useInView } from 'react-intersection-observer';
 import axios from 'axios';
 
@@ -10,7 +10,7 @@ const PolularMovie = () => {
   const [loading, setLoading] = useState(false);
   const [ref, inView] = useInView();
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     setLoading(true);
     try {
       const res = await axios.get(
@@ -21,11 +21,11 @@ const PolularMovie = () => {
       console.log(e);
     }
     setLoading(false);
-  };
+  }, [page]);
 
   useEffect(() => {
     fetchData();
-  }, [page]);
+  }, [fetchData]);
 
   useEffect(() => {
     if (inView && !loading) {
@@ -44,7 +44,7 @@ const PolularMovie = () => {
   return (
     <>
       {movies.map((movie) => (
-        <div className="card" ref={ref} key={movie.id}>
+        <div ref={ref} key={movie.id}>
           <DataCard
             title={movie.title}
             poster={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
