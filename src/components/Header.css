@@ -5,13 +5,18 @@
   --header-background-color: #5085a5;
 }
 
+.navbar-background {
+  background-color: var(--header-background-color);
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--header-background-color);
   padding: 20px;
-  margin: 0px;
+  margin: 0px auto;
+
+  width: 70%;
 }
 
 .navbar ul {
@@ -27,30 +32,35 @@
   color: var(--header-text-color-hover);
 }
 
-.navbar-logo {
-  font-size: 20px;
+.navbar-left-side {
+  display: flex;
 }
 
-.navbar-logo * {
+.navbar-left-side-logo {
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+.navbar-left-side-logo * {
   padding: 0 5px;
 }
 
-.navbar-logo i {
+.navbar-left-side-logo i {
   color: var(--header-main-logo-color);
 }
 
-.navbar-menu {
+.navbar-left-side-menu {
   display: flex;
   list-style: none;
-  padding-left: 0;
+  padding-left: 0px;
   font-size: 20px;
 }
 
-.navbar-menu li {
+.navbar-left-side-menu li {
   padding: 0 20px;
 }
 
-.navbar-icon {
+.navbar-right-side-icon {
   display: flex;
   list-style: none;
   padding-left: 0;
@@ -58,38 +68,46 @@
   font-size: 20px;
 }
 
-.navbar-icon li {
+.navbar-right-side-icon li {
   padding: 0 10px;
 }
 
 .navbar-toggle {
   display: none;
   position: absolute;
-  right: 30px;
+  right: 130px;
   font-size: 20px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .navbar {
     flex-direction: column;
-    align-items: flex-start;
   }
 
-  .navbar-menu {
+  .navbar-left-side {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-left-side-logo {
+    display: block;
+  }
+
+  .navbar-left-side-menu {
     display: none;
     flex-direction: column;
-    align-items: center;
+    text-align: left;
     width: 100%;
   }
 
   /*Before applyting List width as 100%, why list does not align left side?*/
-  .navbar-menu li {
+  .navbar-left-side-menu li {
     width: 100%;
     text-align: center;
     padding: 5px 0;
   }
 
-  .navbar-icon {
+  .navbar-right-side-icon {
     display: none;
     justify-content: center;
     width: 100%;
@@ -99,8 +117,8 @@
     display: block;
   }
 
-  .navbar-menu.unfolded,
-  .navbar-icon.unfolded {
+  .navbar-left-side-menu.unfolded,
+  .navbar-right-side-icon.unfolded {
     display: flex;
     margin-top: 20px;
   }

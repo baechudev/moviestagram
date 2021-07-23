@@ -12,12 +12,12 @@ function Header() {
 
   const ToggleButton = () => {
     classActive
-      ? setToggleMenuClass('navbar-menu unfolded')
-      : setToggleMenuClass('navbar-menu');
+      ? setToggleMenuClass('navbar-left-side-menu unfolded')
+      : setToggleMenuClass('navbar-left-side-menu');
 
     classActive
-      ? setToggleiconClass('navbar-icon unfolded')
-      : setToggleiconClass('navbar-icon');
+      ? setToggleiconClass('navbar-right-side-icon unfolded')
+      : setToggleiconClass('navbar-right-side-icon');
   };
 
   useEffect(() => {
@@ -25,40 +25,43 @@ function Header() {
   });
 
   return (
-    <div className="navbar">
-      <div className="navbar-logo">
-        <i className="fas fa-photo-video"></i>
-        <a href="/">Moviestagram</a>
+    <div className="navbar-background">
+      <div className="navbar">
+        <div className="navbar-left-side">
+          <div className="navbar-left-side-logo">
+            <i className="fas fa-photo-video"></i>
+            <a href="/">Moviestagram</a>
+          </div>
+          <ul className={toggleMenuClass}>
+            <li>
+              <a href="/popular">Popular</a>
+            </li>
+            <li>
+              <a href="/top-rated">Top Rated</a>
+            </li>
+            <li>
+              <a href="/upcoming">Upcoming</a>
+            </li>
+          </ul>
+        </div>
+
+        <ul className={toggleiconClass}>
+          <li>
+            <a href="https://www.instagram.com/">
+              <i className="fab fa-instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/">
+              <i className="fab fa-twitter"></i>
+            </a>
+          </li>
+        </ul>
+
+        <a href="#" className="navbar-toggle" onClick={menuToggleFunction}>
+          <i className="fas fa-bars"></i>
+        </a>
       </div>
-
-      <ul className={toggleMenuClass}>
-        <li>
-          <a href="/popular">Popular</a>
-        </li>
-        <li>
-          <a href="/top-rated">Top Rated</a>
-        </li>
-        <li>
-          <a href="/upcoming">Upcoming</a>
-        </li>
-      </ul>
-
-      <ul className={toggleiconClass}>
-        <li>
-          <a href="https://www.instagram.com/">
-            <i className="fab fa-instagram"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://twitter.com/">
-            <i className="fab fa-twitter"></i>
-          </a>
-        </li>
-      </ul>
-
-      <a href="#" className="navbar-toggle" onClick={menuToggleFunction}>
-        <i className="fas fa-bars"></i>
-      </a>
     </div>
   );
 }
