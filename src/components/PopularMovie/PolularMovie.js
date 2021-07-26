@@ -1,35 +1,28 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-import axios from 'axios';
+
+import fetchMovies from '../../apis/fetchMoives';
 
 import DataCard from '../DataCard/DataCard';
 
 const PolularMovie = () => {
-  const [page, setPage] = useState(1);
+  const [pageNum, setPageNum] = useState(1);
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
+
   const [ref, inView] = useInView();
 
-  const fetchData = useCallback(async () => {
-    setLoading(true);
-    try {
-      const res = await axios.get(
-        `https://api.themoviedb.org/3/movie/popular?api_key=1806da7101aaea34974ccb44f321e4bf&language=en-US&page=${page}`
-      );
-      setMovies((prev) => [...prev, ...res.data.results]);
-    } catch (e) {
-      console.log(e);
-    }
-    setLoading(false);
-  }, [page]);
-
   useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+    setLoading(true);
+    fetchMovies(pageNum).then((data) =>
+      setMovies((prevMovies) => [...prevMovies, ...data])
+    );
+    setLoading(false);
+  }, [pageNum]);
 
   useEffect(() => {
     if (inView && !loading) {
-      setPage((prevState) => prevState + 1);
+      setPageNum((prevState) => prevState + 1);
     }
   }, [inView, loading]);
 
@@ -44,7 +37,7 @@ const PolularMovie = () => {
   return (
     <>
       {movies.map((movie) => (
-        <div ref={ref} key={movie.id}>
+        <div key={movie.id}>
           <DataCard
             title={movie.title}
             poster={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
@@ -53,6 +46,7 @@ const PolularMovie = () => {
           />
         </div>
       ))}
+      <div className="ScrollEndPoint" ref={ref}></div>
     </>
   );
 };
