@@ -11,7 +11,7 @@ const useInfinteScroll = (query, page) => {
         `https://api.themoviedb.org/3/movie/top_rated?api_key=1806da7101aaea34974ccb44f321e4bf&language=en-US&page=${page}`
       );
       setMovies((prev) => {
-        return [...prev, ...res.data.results];
+        return [...prev, ...res.data.results.map((m) => m.title)];
       });
     } catch (e) {
       console.log(e);
